@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../SpecialCase/invite.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+    <section class="userslist">
+
+    </section>
+</body>
+<script>
+    var path = "../assets/users/";
+    var users = [];
+    var names = 0;
+    var userimg = [
+        'tanay.jpg', 'veddp.jpg', 'dhanashridp.jpg', 'pranalidp.jpg', 'ridhidp.jpg', 'nikhildp.jpg', 'shreyadp.jpg',
+        'shradhadp.jpg', 'omkardp.jpg', 'samikhadp.jpg',
+        'jaidp.jpg', 'sohumdp.jpg'
+    ]
+    for (let j = 0; j < userimg.length; j++) {
+        users.push(`${path}${userimg[j]}`);
+    }
+    var username = ['_tanay_777_', '_ved_03', 'lilsweet_heart_', '_.itssp', 'rid_.15', 'nikh_il.hegde', 'shreya_2813', 'sxhrads', '___omkarrr_', 'samiksh.aa', 'smiling_jai', 'officialalgeo', 8];
+
+    var usersub = [
+        'Tanay', 'Ved👽', 'lilsweet heart 🖤', '♡ :)', 'Ridima Mali', 'Nikhil Hegde', '𝙎𝙝𝙧𝙚𝙮𝙖 🖤',
+        'ＳＨＲＡＤＤＨＡ', '_Omkar...',
+        'try again.', 'jai sharma', 'Sohum Raut'
+    ]
+
+    function load() {
+        for (let i = 0; i < users.length; i++) {
+            let dom = document.querySelector('.userslist');
+            var main = document.createElement('div');
+            main.setAttribute('class', 'maindom');
+            main.classList.add('flex', 'flexrow', 'centerX', 'centerY');
+
+            var userpic = document.createElement('img');
+            userpic.setAttribute('class', 'userimage');
+            userpic.setAttribute('src', users[i]);
+
+            var userdom = document.createElement('div');
+            userdom.setAttribute('class', 'userdom');
+            userdom.classList.add('flex', 'flex-column', 'centerX');
+
+            var username_dis = document.createElement('div');
+            username_dis.setAttribute('class', 'userdisplay');
+            username_dis.innerHTML = username[i];
+
+            var subtitle = document.createElement('div');
+            subtitle.setAttribute('class', 'subtitle');
+            subtitle.innerHTML = usersub[i]
+
+            var morediv = document.createElement('div');
+            morediv.setAttribute('class', 'morediv');
+            morediv.classList.add('flex', 'flex-column', 'centerX', 'centerY');
+            main.appendChild(morediv);
+            morediv.innerHTML = '<button class="leave">Message</button><br><button class="leave">Report</button>';
+            morediv.id = 'id_' + i;
+
+            var moreoptions = document.createElement('div');
+            moreoptions.setAttribute('class', 'moreopt');
+            moreoptions.classList.add('material-symbols-outlined');
+            moreoptions.innerHTML = 'more_vert';
+            moreoptions.id = i;
+            moreoptions.onclick = (e) => {
+                scalediv(e.target.id);
+            }
+
+            // Appending fucntions ..... 
+            dom.appendChild(main);
+            userdom.appendChild(username_dis);
+            userdom.appendChild(subtitle);
+            main.appendChild(userpic);
+            main.appendChild(userdom);
+            main.appendChild(moreoptions);
+        }
+
+    }
+
+    setTimeout(load, 100);
+    function scalediv(Id, res) {
+        names = Id;
+        var x = document.getElementById('id_' + Id);
+        x.style.transform = 'scale(0.8)';
+
+    }
+</script>
+
+</html>
