@@ -5,7 +5,9 @@ const app = express()
 const port = 3000
 const DB = 'mongodb+srv://nikhil123:nikhil123@base1.fz8lbec.mongodb.net/instagram?retryWrites=true&w=majority'
 
-mongoose.connect(DB).then(() => {
+mongoose.connect(DB,{
+  useNewUrlParser: true,
+  useUnifiedTopology: true,}).then(() => {
   console.log('connected');
 }).catch((err) => {
   console.log(err);
@@ -56,5 +58,5 @@ app.get('*', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(` ${port}`)
 })
