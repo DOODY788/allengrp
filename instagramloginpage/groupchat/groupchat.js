@@ -69,7 +69,7 @@ function random(min, max) {
 function loadusers(){
     var x  = document.createElement('iframe');
     x.width = '100%';
-    x.height = '65%';
+    x.height = '70%';
     x.id = 'users';
     x.src = '../SpecialCase/users.html';
     document.body.appendChild(x);
