@@ -69,13 +69,14 @@ function random(min, max) {
 function loadusers(){
     var x  = document.createElement('iframe');
     x.width = '100%';
-    x.height = '35%';
+    x.height = '65%';
     x.id = 'users';
     x.src = '../SpecialCase/users.html';
     document.body.appendChild(x);
     x.style.position = 'absolute';
-    x.style.top = '100px'
+    x.style.top = '93px'
     x.style.left = 0
+    x.style.border = '1px solid rgb(80,80,80)';
 }
 msgerChat.onclick = ()=>{
     document.querySelector('#users').remove();

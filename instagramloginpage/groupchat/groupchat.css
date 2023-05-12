@@ -174,13 +174,21 @@
     height: 40px;
     border: 1px solid rgb(150, 150, 150);
     border-radius: 100%;
-    margin-right: 0.5rem;
+    margin-right: 0.4rem;
+    margin-left: 0.0rem;
   }
   .msger-header-title{
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
+    /* justify-content:center; */
     align-items: center;
     width: 100%;
     
+  }
+  .mrtopt{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 147px;
   }
