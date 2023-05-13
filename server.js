@@ -48,7 +48,7 @@ app.get('/login', (req, res) => {
     res.redirect('*');
   })
 })
-app.get('/groupchat',(req,res)=>{
+app.post('/groupchat',(req,res)=>{
 
   res.status(200).render('../SpecialCase/invite.pug');
 })
