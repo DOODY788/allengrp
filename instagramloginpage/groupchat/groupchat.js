@@ -7,13 +7,20 @@ let users = false;
 let error = false;
 let info = false;
 
-const BOT_MSGS = [
-  "No one is online",
+// const BOT_MSGS = [
+//   "No one is online",
 
-];
+// ];
+const BOT_MSGS = {
+  'ishmitdp': 'hate speech1',
+  'harshaldp': 'hate speech 2',
+  'ishmitdp': 'hate speech 3',
+  'advaitdp': 'hate speech 4',
+  'ishmitdp': 'hate speech 5',
+}
 
 // Icons made by Freepik from www.flaticon.com
-const BOT_IMG = "https://image.flaticon.com/icons/svg/327/327779.svg";
+var BOT_IMG = null;
 const PERSON_IMG = "../assets/users/aayushdp.jpg";
 const BOT_NAME = "BOT";
 const PERSON_NAME = "Sajad";
@@ -34,7 +41,7 @@ function appendMessage(name, img, side, text) {
   //   Simple solution for small apps
   const msgHTML = `
     <div class="msg ${side}-msg">
-      <div class="msg-img" style="background-image: url(${img})"></div>
+      <div class="msg-img" style="background-image: url(../assets/users/${img}.jpg)"></div>
 
       <div class="msg-bubble">
         <div class="msg-text">${text}</div>
@@ -47,13 +54,27 @@ function appendMessage(name, img, side, text) {
 }
 
 function botResponse() {
-  const r = random(0, BOT_MSGS.length - 1);
-  const msgText = BOT_MSGS[r];
-  const delay = msgText.split(" ").length * 100;
+  const msgText = [];
+  const userid = [];
+  let i = 0;
+  for (const [key, value] of Object.entries(BOT_MSGS)) {
 
-  setTimeout(() => {
-    appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
-  }, delay);
+    msgText.push(value);
+    userid.push(key);
+    // const delay = msgText.split(" ").length * 10;
+
+  }
+
+  setTimeout(()=>{
+    setInterval(()=>{
+      appendMessage(BOT_NAME,userid[i+=1], "left", msgText[i+=1]);
+      console.log(msgText[i]);
+      console.log(userid,msgText)
+    },500)
+  },1000)
+
+
+
 }
 
 // Utils
@@ -103,7 +124,7 @@ function loaderror() {
   error = true;
   msgerChat.style.opacity = '0.5';
 }
-function reset(){
+function reset() {
   if (error) {
     document.querySelector('.callerror').style.top = '-25rem';
     error = false;
@@ -112,15 +133,22 @@ function reset(){
     document.querySelector('#users').remove();
     users = false;
   }
-  else if(info){
+  else if (info) {
     document.querySelector('.infotab').style.top = '-25rem'
     info = false;
 
   }
   msgerChat.style.opacity = '1';
 }
-function openinfo(){
+function openinfo() {
   document.querySelector('.infotab').style.top = '25%';
-  info= true;
+  info = true;
   msgerChat.style.opacity = '0.5';
+}
+// botResponse()
+function likemsg(elem){
+  var likedom = document.createElement('div');
+  likedom.innerHTML = '❤️';
+  likedom.setAttribute('class','likedom');
+  elem.appendChild(likedom);
 }
