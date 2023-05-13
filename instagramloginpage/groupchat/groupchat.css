@@ -34,6 +34,7 @@
     height: 100vh;
     background-color: rgb(19, 19, 19);
     font-family: Helvetica, sans-serif;
+    position: relative;
   }
   
   .msger {
@@ -42,7 +43,7 @@
     /* justify-content: space-between; */
     width: 100%;
     max-width: 867px;
-    height: calc(100% - 50px);
+    height: 100%;
     border:0.1rem solid rgb(80, 80, 80);
     border-radius: 2px;
     background: var(--msger-bg);
@@ -134,7 +135,7 @@
   
   .msger-inputarea {
     display: flex;
-    padding: 10px;
+    padding: 5px;
     /* border-top: var(--border); */
     background:transparent;
     border: 1px solid rgb(80, 80, 80);
@@ -191,4 +192,48 @@
     align-items: center;
     justify-content: space-between;
     width: 147px;
+  }
+  .defloader{
+    position: absolute;
+    z-index: 5;
+    top: -25rem;
+    background-color: rgb(20,20,20);
+    text-align: center;
+    width: 75%;
+    left: 15%;
+    overflow: hidden;
+    height:max-content;
+    padding: 0.1rem 0rem 0rem 0rem;
+    border: 1px solid rgb(44, 44, 44);
+    border-radius: 10px;
+    transition: .3s;
+    color: white;
+    word-wrap: break-word;
+  }
+  .defloader p{
+    padding: 0.5rem;
+  }
+  .defbutton{
+    padding: 0.2rem 2.8rem 0.2rem 2.8rem;
+    background-color: rgb(0, 163, 255);
+    outline: none;
+    border: 1px solid rgb(0, 163, 255);
+    border-radius: 7px;
+    font-size: 1.2rem;
+    margin: 1.5rem 0 0rem 0;
+    width: 100%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .admin{
+    color: rgb(223, 223, 223);
+    text-align: left;
+  }
+  .pp{
+    color: rgb(150, 150, 150);
+  }
+  .camera img{
+    border: 1px solid transparent;
+    border-radius: 100%;
+    width: 40px;
   }

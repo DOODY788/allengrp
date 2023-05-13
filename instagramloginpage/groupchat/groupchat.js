@@ -1,6 +1,11 @@
 const msgerForm = get(".msger-inputarea");
 const msgerInput = get(".msger-input");
 const msgerChat = get(".msger-chat");
+const callvoice = get('.call');
+const callvideo = get('.videocall');
+let users = false;
+let error = false;
+let info = false;
 
 const BOT_MSGS = [
   "No one is online",
@@ -22,7 +27,7 @@ msgerForm.addEventListener("submit", event => {
   appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
   msgerInput.value = "";
 
-//   botResponse();
+  //   botResponse();
 });
 
 function appendMessage(name, img, side, text) {
@@ -47,7 +52,7 @@ function botResponse() {
   const delay = msgText.split(" ").length * 100;
 
   setTimeout(() => {
-    appendMessage(BOT_NAME,BOT_IMG,"left", msgText);
+    appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
   }, delay);
 }
 
@@ -66,18 +71,56 @@ function formatDate(date) {
 function random(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
-function loadusers(){
-    var x  = document.createElement('iframe');
+function loadusers() {
+  if (!users) {
+    var x = document.createElement('iframe');
     x.width = '100%';
-    x.height = '70%';
+    x.height = '75%';
     x.id = 'users';
     x.src = '../SpecialCase/users.html';
     document.body.appendChild(x);
     x.style.position = 'absolute';
-    x.style.top = '93px'
+    x.style.top = '65px'
     x.style.left = 0
     x.style.border = '1px solid rgb(80,80,80)';
+    users = true;
+    msgerChat.style.opacity = '0.5';
+  }
+
 }
-msgerChat.onclick = ()=>{
+msgerChat.onclick = () => {
+  reset();
+
+}
+
+callvoice.onclick = () => {
+  loaderror();
+}
+
+function loaderror() {
+  var x = document.querySelector('.callerror');
+  x.style.top = '25%';
+  error = true;
+  msgerChat.style.opacity = '0.5';
+}
+function reset(){
+  if (error) {
+    document.querySelector('.callerror').style.top = '-25rem';
+    error = false;
+  }
+  else if (users) {
     document.querySelector('#users').remove();
+    users = false;
+  }
+  else if(info){
+    document.querySelector('.infotab').style.top = '-25rem'
+    info = false;
+
+  }
+  msgerChat.style.opacity = '1';
+}
+function openinfo(){
+  document.querySelector('.infotab').style.top = '25%';
+  info= true;
+  msgerChat.style.opacity = '0.5';
 }
