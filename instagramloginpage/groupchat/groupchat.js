@@ -7,7 +7,6 @@ const callvideo = get('.videocall');
 let users = false;
 let error = false;
 let info = false;
-
 // const BOT_MSGS = [
 //   "No one is online",
 
@@ -24,7 +23,7 @@ const Hatesppech = [
   ['user!!', 'hate speech9'],
 ]
 const REELS = [
-  ['ishmitdp', 'reel1'], ['aadeshdp', 'reel2'], ['omdp', 'reel3'], ['ketkidp', 'reel4'], ['samikshadp', 'reel5'],
+  ['ishmitdp', 'reel0'], ['aadeshdp', 'reel2'], ['omdp', 'reel3'], ['ketkidp', 'reel4'], ['samikshadp', 'reel5'],
 
   ['omdp', 'reel6'], ['pranalidp', 'reel'], ['advaitdp', 'reel8']
 
@@ -202,8 +201,8 @@ function loadhatespeech() {
   for (let i = 0; i <= Hatesppech.length; i++) {
     var content = Hatesppech[i];
     const msgHTML = `
-    <div class="msg left-msg">
-      <div class="msg-img" style="background-image: url(../assets/users/${content[0]}.jpg)"></div>
+    <div class="msg left-msg hatespeech id="hatespeech${i}">
+      <div class="msg-img" style="background-image: url(../assets/users/.jpg)"></div>
 
       <div class="msg-bubble">
         <div class="msg-text" ondblclick="likemsg(this)">${content[1]}</div>
@@ -229,4 +228,7 @@ function togglesend(x) {
 function opencamera(){
   let mediadevice = navigator.mediaDevices;
   mediadevice.getUserMedia({video:true,audio:true})
+}
+function openimage(){
+  alert('error :(');
 }

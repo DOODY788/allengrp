@@ -36,6 +36,7 @@
     font-family: Helvetica, sans-serif;
     position: relative;
     user-select: none;
+    scroll-snap-type: mandatory;
   }
   
   .msger {
@@ -152,7 +153,8 @@
     border: none;
     border-radius: 3px;
     font-size: 1em;
-    position: sticky;
+    position:static;
+    z-index: 4;
   }
   .msger-input {
     flex: 1;
@@ -257,7 +259,7 @@
    
   }
   .reel{
-    width: 100px;
+    width: 160px;
     border: 1px solid rgb(80, 80, 80);
     border-radius: 10px;
   }
@@ -304,6 +306,7 @@
     font-family: 'Instagram Sans Light';
     font-size: 1.2rem;
     display: none;
+    z-index: 5;
     height: max-content;
   }
   .icon img{
