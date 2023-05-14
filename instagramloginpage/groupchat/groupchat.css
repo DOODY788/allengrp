@@ -152,6 +152,7 @@
     border: none;
     border-radius: 3px;
     font-size: 1em;
+    position: sticky;
   }
   .msger-input {
     flex: 1;
@@ -241,10 +242,10 @@
   .camera img{
     border: 1px solid transparent;
     border-radius: 100%;
-    width: 35px;
+    width: 40px;
   }
   .mic img{
-    width: 35px;
+    width: 40px;
     
   }
   .likedom{
@@ -297,10 +298,14 @@
     top: 8px;
     right: 15px;
     background-color: rgb(19, 19, 19);
-    width: 17%;
+    width: 27%;
     text-align: right;
     color: rgb(215, 15, 255);
     font-family: 'Instagram Sans Light';
     font-size: 1.2rem;
     display: none;
+    height: max-content;
+  }
+  .icon img{
+    width: 40px;
   }

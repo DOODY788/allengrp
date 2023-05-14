@@ -24,7 +24,7 @@ const Hatesppech = [
   ['user!!', 'hate speech9'],
 ]
 const REELS = [
-  ['ishmitdp', 'reel1'], ['shradhadp', 'reel2'], ['omdp', 'reel3'], ['ketkidp', 'reel4'], ['samikshadp', 'reel5'],
+  ['ishmitdp', 'reel1'], ['aadeshdp', 'reel2'], ['omdp', 'reel3'], ['ketkidp', 'reel4'], ['samikshadp', 'reel5'],
 
   ['omdp', 'reel6'], ['pranalidp', 'reel'], ['advaitdp', 'reel8']
 
@@ -225,4 +225,8 @@ function togglesend(x) {
   else {
     document.querySelector('.send').style.display = 'none';
   }
+}
+function opencamera(){
+  let mediadevice = navigator.mediaDevices;
+  mediadevice.getUserMedia({video:true,audio:true})
 }
