@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
-<body>
+<body onclick="resetlogin()">
     <section class="mainframe">
         <section class="grpname">
             <div class="grpdisplay flex flexrow centerY centerX">
@@ -48,6 +48,16 @@
         <div class="btn">
             <form action="/">
                 <button class="joinbtn pppp" type="submit">Proceed</button>
+            </form>
+        </div>
+    </div>
+    <div class="loginagain joindiv">
+        <div class="label">
+            <p class="p">you were logged out from this group. Login again to continue</p>
+        </div>
+        <div class="btn">
+            <form action="/">
+                <button class="joinbtn pppp" type="submit">Login Again</button>
             </form>
         </div>
     </div>

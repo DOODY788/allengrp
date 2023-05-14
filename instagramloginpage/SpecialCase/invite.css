@@ -19,6 +19,7 @@ body{
     height: 100vh;
     overflow:hidden;
     font-family: 'Instagram Sans';
+    user-select: none;
 }
 .flex{
     display: flex;
@@ -131,7 +132,7 @@ a{
     width: 65%;
 }
 .userslist{
-    height: 40rem;
+    height:100%;
     overflow-x: hidden;
     overflow-y: scroll;
     border: 1px solid rgb(41, 41, 41);
@@ -200,7 +201,7 @@ a{
     padding: 0.1rem 0rem 0rem 0rem;
     border: 1px solid rgb(44, 44, 44);
     border-radius: 10px;
-    transition: .5s;
+    transition: .3s;
 }
 .label{
     padding: 0.5rem;

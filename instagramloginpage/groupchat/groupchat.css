@@ -72,10 +72,10 @@
     width: 6px;
   }
   .msger-chat::-webkit-scrollbar-track {
-    background: #ddd;
+    background: #00000062;
   }
   .msger-chat::-webkit-scrollbar-thumb {
-    background: #bdbdbd;
+    background: #bdbdbd1e;
   }
   .msg {
     display: flex;
@@ -99,7 +99,7 @@
   .msg-bubble {
     font-family: 'Instagram Sans Light';
     max-width: 450px;
-    padding: 15px;
+    padding: 10px;
     border: 1px solid rgb(80, 80, 80);
     border-radius: 15px;
     background-color: rgb(19, 19, 19);
@@ -253,4 +253,41 @@
     background-color: rgb(20,20,20);
     padding: 0.1rem;
    
+  }
+  .reel{
+    width: 100px;
+    border: 1px solid rgb(80, 80, 80);
+    border-radius: 10px;
+  }
+  .msg-reel{
+    font-family: 'Instagram Sans Light';
+    max-width: 450px;
+    /* padding: 2px; */
+    /* border: 1px solid rgb(80, 80, 80); */
+    border-radius: 5px;
+    background-color: rgb(19, 19, 19);
+    color: white;
+  }
+  .fullreel video{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+
+  }
+  .fullreel{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    width: 100vw;
+    height: fit-content;
+    background-color: black;
+    z-index: 5;
+  }
+  .fullreel .msg-img{
+    display:none;
+  }
+  .back{
+    position: absolute;
+    top: 25px;
   }
