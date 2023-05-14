@@ -145,6 +145,7 @@
     border: 1px solid rgb(80, 80, 80);
     border-radius: 75px;
     align-items: center;
+    position: relative;
 }
   .msger-inputarea * {
     padding: 3px;
@@ -240,10 +241,10 @@
   .camera img{
     border: 1px solid transparent;
     border-radius: 100%;
-    width: 40px;
+    width: 35px;
   }
   .mic img{
-    width: 45px;
+    width: 35px;
     
   }
   .likedom{
@@ -290,4 +291,16 @@
   .back{
     position: absolute;
     top: 25px;
+  }
+  .send{
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    background-color: rgb(19, 19, 19);
+    width: 17%;
+    text-align: right;
+    color: rgb(215, 15, 255);
+    font-family: 'Instagram Sans Light';
+    font-size: 1.2rem;
+    display: none;
   }

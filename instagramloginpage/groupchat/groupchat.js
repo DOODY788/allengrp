@@ -1,6 +1,7 @@
 const msgerForm = get(".msger-inputarea");
 const msgerInput = get(".msger-input");
 const msgerChat = get(".msger-chat");
+const sndbtn = get('.send')
 const callvoice = get('.call');
 const callvideo = get('.videocall');
 let users = false;
@@ -11,27 +12,21 @@ let info = false;
 //   "No one is online",
 
 // ];
-const BOT_MSGS = {
-  'ishmitdp': 'hate speech1',
-  'harshaldp': 'hate speech 2',
-  'ishmitdp': 'hate speech 3',
-  'advaitdp': 'hate speech 4',
-  'ishmitdp': 'hate speech 5',
-}
+const Hatesppech = [
+  ['user!!', 'hate speech1'],
+  ['user!!', 'hate speech2'],
+  ['user!!', 'hate speech3'],
+  ['user!!', 'hate speech4'],
+  ['user!!', 'hate speech5'],
+  ['user!!', 'hate speech6'],
+  ['user!!', 'hate speech7'],
+  ['user!!', 'hate speech8'],
+  ['user!!', 'hate speech9'],
+]
 const REELS = [
-  ['ishmitdp','reel1'],['shradhadp','reel2'],['omdp','reel3'],['ketkidp','reel4'],['samikshadp','reel5'],
+  ['ishmitdp', 'reel1'], ['shradhadp', 'reel2'], ['omdp', 'reel3'], ['ketkidp', 'reel4'], ['samikshadp', 'reel5'],
 
-  ['omdp','reel6'],['pranalidp','reel'],['advaitdp','reel8'],['ishmitdp','reel10'],['advaitdp','reel9'],
-
-  ['nikhildp','reel12'],['shrishdp','reel11'],['veddp','reel15'],['pranalidp','reel20'],['shradhadp','reel14'],
-
-  ['advaitdp','reel13'],['bhumidp','reel16'],['omkardp','reel17'],['harshaldp','reel18'],['bhaktidp','reel19'],
-
-  ['ishmitdp','reel21'],['nachiketdp','reel30'],['nachiketdp','reel22'],['nachiketdp','reel24'],['pranalidp','reel25'],
-
-  ['aayushidp','reel26'],['aayushidp','reel27'],['siddeshdp','reel'],['shradhadp','reel18'],['sarthakdp','reel29'],
-
-  ['hardikdp','reel8'],['aayushidp','reel10'],['sohumdp','reel30'],['ketkidp','reel20'],['veddp','reel15'],
+  ['omdp', 'reel6'], ['pranalidp', 'reel'], ['advaitdp', 'reel8']
 
 
 ]
@@ -50,15 +45,27 @@ msgerForm.addEventListener("submit", event => {
 
   appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
   msgerInput.value = "";
-
+  document.querySelector('.send').style.display = 'none';
   //   botResponse();
 });
+
+sndbtn.addEventListener('click', event => {
+  event.preventDefault();
+
+  const msgText = msgerInput.value;
+  if (!msgText) return;
+
+  appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
+  msgerInput.value = "";
+  document.querySelector('.send').style.display = 'none';
+  //   botResponse();
+})
 
 function appendMessage(name, img, side, text) {
   //   Simple solution for small apps
   const msgHTML = `
     <div class="msg ${side}-msg">
-      <div class="msg-img" style="background-image: url(../assets/users/${img}.jpg)"></div>
+      <div class="msg-img" style="background-image: url(../assets/users/aayushdp.jpg)"></div>
 
       <div class="msg-bubble">
         <div class="msg-text">${text}</div>
@@ -171,15 +178,15 @@ function likemsg(elem) {
   console.log(this);
 }
 async function loadreels() {
-  for(let i=0;i<REELS.length;i++){
+  for (let i = 0; i < REELS.length; i++) {
     let reel = REELS[i];
     const msgHTML = `
-    <div class="msg left-msg reelmsg" onclick="openreel(this)" id='${i}'>
+    <div class="msg left-msg reelmsg" onclick='openreel(this)'  id='${i}'>
       <div class="msg-img" style="background-image: url(../assets/users/${reel[0]}.jpg)"></div>
   
       <div class="msg-reel">
         <div class="msg-text">
-        <video id="video${i}" class='reel' src="../assets/reels/${reel[1]}.mp4" playsinline loop>
+        <img id="video${i}" class='reel' src="../assets/img/${reel[1]}.jpg" playsinline loop>
         </div>
       </div
     </div>
@@ -189,92 +196,33 @@ async function loadreels() {
   }
 
 }
-loadreels().then(loadhatespeech('veddp','mcsala'));
+loadreels().then(loadhatespeech());
 
-function loadhatespeech(img,text){
-  const msgHTML = `
-    <div class="msg left-msg" >
-      <div class="msg-img" style="background-image: url(../assets/users/${img}.jpg)"></div>
+function loadhatespeech() {
+  for (let i = 0; i <= Hatesppech.length; i++) {
+    var content = Hatesppech[i];
+    const msgHTML = `
+    <div class="msg left-msg">
+      <div class="msg-img" style="background-image: url(../assets/users/${content[0]}.jpg)"></div>
 
       <div class="msg-bubble">
-        <div class="msg-text">${text}</div>
+        <div class="msg-text" ondblclick="likemsg(this)">${content[1]}</div>
       </div>
     </div>
   `;
-  msgerChat.insertAdjacentHTML("beforeend", msgHTML);
-  msgerChat.scrollTop += 500;
+    msgerChat.insertAdjacentHTML("beforeend", msgHTML);
+    msgerChat.scrollTop += 500;
+  }
+
 }
-function openreel(x){
-  console.log(x)
-  x.setAttribute('class','fullreel')
-  x.scrollIntoView();
-
-  let item = document.getElementById("video"+x.id);
-  item.play();
-  let timerID;
-  let counter = 0;
-
-  let pressHoldEvent = new CustomEvent("pressHold");
-
-  // Increase or decreae value to adjust how long
-  // one should keep pressing down before the pressHold
-  // event fires
-  let pressHoldDuration = 20;
-
-  // Listening for the mouse and touch events    
-  item.addEventListener("mousedown", pressingDown, false);
-  item.addEventListener("mouseup", notPressingDown, false);
-  item.addEventListener("mouseleave", notPressingDown, false);
-
-  item.addEventListener("touchstart", pressingDown, false);
-  item.addEventListener("touchend", notPressingDown, false);
-
-  // Listening for our custom pressHold event
-  item.addEventListener("pressHold", doSomething, false);
-
-  function pressingDown(e) {
-    // Start the timer
-    requestAnimationFrame(timer);
-
-    e.preventDefault();
-
-    console.log("Pressing!");
+function openreel(x) {
+  alert('something went wrong');
+}
+function togglesend(x) {
+  if (x.value != '') {
+    document.querySelector('.send').style.display = 'block';
   }
-
-  function notPressingDown(e) {
-    // Stop the timer
-    cancelAnimationFrame(timerID);
-    counter = 0;
-
-    item.play();
+  else {
+    document.querySelector('.send').style.display = 'none';
   }
-
-  //
-  // Runs at 60fps when you are pressing down
-  //
-  function timer() {
-    console.log("Timer tick!");
-
-    if (counter < pressHoldDuration) {
-      timerID = requestAnimationFrame(timer);
-      counter++;
-    } else {
-      console.log("Press threshold reached!");
-      item.dispatchEvent(pressHoldEvent);
-    }
-  }
-
-  function doSomething(e) {
-    item.pause();
-  }
-  var back = document.createElement('button');
-  back.innerHTML = 'Back';
-  x.appendChild(back);
-  back.onclick = ()=>{
-    x.setAttribute('class','msg');
-    x.classList.add('left-msg');
-    x.classList.add('reelmsg');
-
-  }
-  back.setAttribute('class','back defbtn');
-} 
+}
