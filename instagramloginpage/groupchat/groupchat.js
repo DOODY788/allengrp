@@ -24,6 +24,14 @@ const Hatesppech = [
   ['aadeshdp', 'bhai fuckkkk!! iss group mein unsend ka option hi nhi aa raha 😐'],
   ['hardikdp','are shiitttt leave kar group chutiye'],
   ['harshaldp','aychi gand leave kar bhai. Unsend ho hi nhi raha'],
+  ['shrishdp','are group admin ko group delete karne bolta hu mein ruk'],
+  ['hardikdp','haa aisa hi kar. ayush dekhne se pehle delete karde'],
+  ['aadeshdp','karo karo......'],
+  ['shrishdp','naya group banaye kya?'],
+  ['hardikdp','nhi bhai!!'],
+  ['aadeshdp','bhai bas kar'],
+  ['harshaldp','group delete kar na madarchot'],
+  ['shrishdp','thike thike karta hu']
 ]
 const REELS = [
   ['ishmitdp', 'reel0'], ['aadeshdp', 'reel2'], ['omdp', 'reel3'], ['ketkidp', 'reel4'], ['samikshadp', 'reel5'],
