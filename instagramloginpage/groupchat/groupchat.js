@@ -19,12 +19,11 @@ const Hatesppech = [
   ['harshaldp','😂😂😂'],
   ['hardikdp', 'saala ladkiyon ke saath ghumta reheta hain'],
   ['aadeshdp', 'bhai uss din na toilet mein ayush ladkiyon ke tara behave kar raha tha, aisa chaman chutiya kidar nhi dekha maine 😂'],
-  ['harshaldp', '😂😂😂😂😂😂'],
+  ['harshaldp', '😂😂😂😂😂😂 aisa aadmi pahile bar dekha re'],
   ['hardikdp', 'bhai ye ayush group pe to nhi hai na. Fir pata chala apne se rada karne aajayega 😂😂'],
   ['aadeshdp', 'bhai fuckkkk!! iss group mein unsend ka option hi nhi aa raha 😐'],
   ['hardikdp','are shiitttt leave kar group chutiye'],
   ['harshaldp','aychi gand leave kar bhai. Unsend ho hi nhi raha'],
-  ['hardikdp','chal chal jaldi!!!']
 ]
 const REELS = [
   ['ishmitdp', 'reel0'], ['aadeshdp', 'reel2'], ['omdp', 'reel3'], ['ketkidp', 'reel4'], ['samikshadp', 'reel5'],
