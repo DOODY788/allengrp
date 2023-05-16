@@ -75,7 +75,7 @@ function appendMessage(name, img, side, text) {
   //   Simple solution for small apps
   const msgHTML = `
     <div class="msg ${side}-msg">
-      <div class="msg-img" style="background-image: url(../assets/users/.jpg)"></div>
+      <div class="msg-img" style="background-image: url(../assets/users/aayushdp.jpg)"></div>
 
       <div class="msg-bubble">
         <div class="msg-text">${text}</div>
