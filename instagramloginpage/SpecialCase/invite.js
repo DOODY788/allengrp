@@ -10,10 +10,10 @@ function reset(){
 
 }
 
-setTimeout(() => {
-    document.querySelector('.loginagain').style.top = '25%';
-    document.querySelector('.mainframe').style.opacity = '0.5'
-}, 800);
+// setTimeout(() => {
+//     document.querySelector('.loginagain').style.top = '25%';
+//     document.querySelector('.mainframe').style.opacity = '0.5'
+// }, 800);
 
 function resetlogin(){
     document.querySelector('.loginagain').style.top = '-50rem';
