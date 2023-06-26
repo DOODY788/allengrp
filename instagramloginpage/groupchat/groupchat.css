@@ -315,3 +315,28 @@
   .hatespeech{
     max-width:250px;
   }
+  .hold{
+    background-color: rgb(37, 37, 37);
+    color: white;
+  }
+  .actionframe{
+    position: relative;
+  }
+  .actionTab{
+    position: absolute;
+    top: 0;
+    left: 80%;
+    padding: 0.2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .bt{
+    margin: 0.5rem 0.2rem 0 0.2rem;
+    background-color: rgb(50, 50, 50);
+    border: 1px solid white;
+    color: white;
+    padding: 0.2rem 1rem 0.2rem 1rem;
+  }
+  .report{
+      color: red;
+    }

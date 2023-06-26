@@ -11,8 +11,8 @@ function reset(){
 }
 
 setTimeout(() => {
-    document.querySelector('.loginagain').style.top = '25%';
-    document.querySelector('.mainframe').style.opacity = '0.5'
+    // document.querySelector('.loginagain').style.top = '25%';
+    // document.querySelector('.mainframe').style.opacity = '0.5'
 }, 800);
 
 function resetlogin(){

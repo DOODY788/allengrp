@@ -43,7 +43,7 @@ const REELS = [
 
 // Icons made by Freepik from www.flaticon.com
 var BOT_IMG = null;
-const PERSON_IMG = "../assets/users/aayushdp.jpg";
+const PERSON_IMG = "../assets/users/shravandp.jpg";
 const BOT_NAME = "BOT";
 const PERSON_NAME = "Sajad";
 
@@ -74,8 +74,8 @@ sndbtn.addEventListener('click', event => {
 function appendMessage(name, img, side, text) {
   //   Simple solution for small apps
   const msgHTML = `
-    <div class="msg ${side}-msg">
-      <div class="msg-img" style="background-image: url(../assets/users/aayushdp.jpg)"></div>
+    <div class="msg ${side}-msg actionframe" onclick='delmsg(this)'>
+      <div class="msg-img" style="background-image: url(../assets/users/srikrishnadp.jpg)"></div>
 
       <div class="msg-bubble">
         <div class="msg-text">${text}</div>
@@ -203,6 +203,12 @@ async function loadreels() {
     `;
     msgerChat.insertAdjacentHTML("beforeend", msgHTML);
     msgerChat.scrollTop += 500;
+    // document.getElementById(`${i}`).addEventListener('touchstart',(e)=>{
+    //   delmsg(`${i}`)
+    // })
+    // document.getElementById(`${i}`).addEventListener('onclick',(e)=>{
+    //   delmsg(`${i}`)
+    // })
   }
 
 }
@@ -242,4 +248,21 @@ function opencamera(){
 }
 function openimage(){
   alert('error :(');
+}
+
+function delmsg(id){
+  console.log(id)
+  const chunk = `
+    <div class='actionTab hold'>
+      <button class='bt'>Copy</button>  
+      <button class="bt" onclick="delit(${id})">Unsend</button>  
+      <button class="report bt">Report</button>
+    </div>
+  `
+  console.log('pppp')
+  id.insertAdjacentHTML('afterbegin',chunk)
+}
+function delit(id){
+  console.log(id)
+  id.removeChild();
 }

