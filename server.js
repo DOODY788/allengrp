@@ -138,6 +138,10 @@ app.get('*', (req, res) => {
   res.send('404 page not found');
 })
 
+app.get('/storyview',(req,res)=>{
+  res.render('/')
+})
+
 app.listen(port, () => {
   console.log(` ${port}`)
 })
